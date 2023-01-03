@@ -107,31 +107,22 @@ const TypeWriter = ({ text, onCycle }: { onCycle: () => void; text: string }) =>
 
 	useInterval(
 		() => {
-			console.log('stage 1');
 			if (roles === 'add' && letterEffectArr.length < letters.length) {
-				console.log('stage 2');
-
 				setLetterEffectArr([...letterEffectArr, letters[letterEffectArr.length]]);
 				return;
 			}
 			if (roles === 'add' && letterEffectArr.length >= letters.length) {
-				console.log('stage 2');
-
 				setRoles('delete');
 				return;
 			}
 
 			if (roles === 'delete' && letterEffectArr.length > 1) {
-				console.log('stage 3');
-
 				letterEffectArr.pop();
 				setLetterEffectArr([...letterEffectArr]);
 				return;
 			}
 
 			if (letterEffectArr.length === 1) {
-				console.log('stage 4');
-
 				letterEffectArr.pop();
 				setLetterEffectArr([...letterEffectArr]);
 
@@ -139,8 +130,6 @@ const TypeWriter = ({ text, onCycle }: { onCycle: () => void; text: string }) =>
 				onCycle();
 				return;
 			}
-
-			console.log('uncaught');
 		},
 		roles === 'delete' && letterEffectArr.length <= 0 ? null : 200
 	);
@@ -156,10 +145,8 @@ const TypeWriter = ({ text, onCycle }: { onCycle: () => void; text: string }) =>
 
 export const getServerSideProps: GetServerSideProps = async ({ req, res }) => {
 	const mode = getCookie('darkMode', { req, res });
-	console.log(mode);
-	setCookie('darkMode', mode ? mode : 'dark', { req, res, maxAge: 60 * 6 * 24 });
 
-	console.log(mode ? mode : 'dark');
+	setCookie('darkMode', mode ? mode : 'dark', { req, res, maxAge: 60 * 6 * 24 });
 
 	return {
 		props: {

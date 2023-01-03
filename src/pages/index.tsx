@@ -13,8 +13,7 @@ import { useInterval } from 'usehooks-ts';
 
 const contents = ['Web', 'Javascript', 'Html', 'Css', 'Next Js'];
 
-const PortfolioPage = ({ darkMode }) => {
-	console.log(darkMode, 'darkMode');
+const PortfolioPage = (props: any) => {
 	const [curContent, cycleContent] = useCycle(...contents);
 	const [isDarkMode, cycleDarkMode] = useCycle('light', 'dark');
 

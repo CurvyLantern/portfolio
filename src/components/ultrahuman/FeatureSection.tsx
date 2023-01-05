@@ -34,3 +34,5 @@ const FeaturesSection = () => (
 		</ParallaxSlider>
 	</section>
 );
+
+export { FeaturesSection };

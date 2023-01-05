@@ -11,6 +11,7 @@
 	"dependencies": {
 		"@clerk/nextjs": "^4.6.15",
 		"@headlessui/react": "^1.7.7",
+		"@motionone/utils": "^10.15.1",
 		"@next/font": "13.1.1",
 		"@prisma/client": "^4.8.0",
 		"@react-three/drei": "^9.48.1",
@@ -49,6 +50,7 @@
 	},
 	"devDependencies": {
 		"@hookform/resolvers": "^2.9.10",
+		"@svgr/webpack": "^6.5.1",
 		"@tailwindcss/typography": "^0.5.8",
 		"@types/lodash-es": "^4.17.6",
 		"@types/three": "^0.146.0",
@@ -64,4 +66,3 @@
 		"superjson": "^1.12.1"
 	}
 }
-	

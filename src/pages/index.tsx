@@ -26,17 +26,27 @@ const PortfolioPage = (props: any) => {
 	}, [isDarkMode]);
 
 	return (
-		<div className='min-h-screen dark:bg-teal-700  bg-teal-100 flex-col flex'>
+		<div className='dark:bg-teal-700 flex flex-col min-h-screen bg-teal-100'>
 			{/* Navbar section */}
 			<nav className='bg-opacity-40 bg-teal-200 shadow-md border-gray-200 px-2 sm:px-4 py-2.5 rounded dark:bg-gray-900 '>
 				<div className='container flex flex-wrap items-center justify-between mx-auto'>
 					<Link href='/' className='flex items-center'>
-						<span className='text-orange-300 drop-shadow-sm self-center  font-bold text-3xl whitespace-nowrap dark:text-white'>
+						<span className='drop-shadow-sm whitespace-nowrap dark:text-white self-center text-3xl font-bold text-orange-300'>
 							AN
 						</span>
 					</Link>
 
 					<div className='flex gap-5'>
+						<Link
+							href={{
+								pathname: 'projects',
+							}}>
+							<button
+								type='button'
+								className='text-white bg-teal-500 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-3 md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800'>
+								Projects
+							</button>
+						</Link>
 						<Link
 							href={{
 								pathname: 'resume',
@@ -50,7 +60,7 @@ const PortfolioPage = (props: any) => {
 						<div className='w-1 bg-gray-600'></div>
 						<button
 							type='button'
-							className=' flex px-5 items-center p-2 text-sm dark:text-gray-500 rounded-lg dark:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 text-gray-100  bg-gray-700 dark:focus:ring-gray-600'
+							className=' dark:text-gray-500 dark:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:focus:ring-gray-600 flex items-center p-2 px-5 text-sm text-gray-100 bg-gray-700 rounded-lg'
 							onClick={() => {
 								cycleDarkMode();
 							}}>
@@ -61,12 +71,12 @@ const PortfolioPage = (props: any) => {
 				</div>
 			</nav>
 			{/* Main Banner */}
-			<section className='mb-auto flex flex-col items-center justify-center'>
-				<header className='mt-10 text-3xl font-bold text-orange-400 selection:text-2xl selection:text-orange-200 selection:bg-teal-800 selection:bg-opacity-75 '>
+			<section className='flex flex-col items-center justify-center mb-auto'>
+				<header className='selection:text-2xl selection:text-orange-200 selection:bg-teal-800 selection:bg-opacity-75  mt-10 text-3xl font-bold text-orange-400'>
 					<h1>Ashfaq Naseem</h1>
 				</header>
 
-				<p className='dark:text-teal-100 flex items-center justify-center gap-2 text-xl font-semibold  h-20'>
+				<p className='dark:text-teal-100 flex items-center justify-center h-20 gap-2 text-xl font-semibold'>
 					A guy who knows about the{' '}
 					<TypeWriter
 						onCycle={() => {
@@ -82,7 +92,7 @@ const PortfolioPage = (props: any) => {
 				<div className='max-w-[250px] my-10 w-full aspect-1 rounded-full overflow-hidden relative shadow-lg'>
 					<Image src={AvatarImg} className='object-cover' fill alt='this is my image'></Image>
 				</div>
-				<div className='flex text-5xl gap-4 dark:text-teal-100 '>
+				<div className='dark:text-teal-100  flex gap-4 text-5xl'>
 					<span>
 						<FaFacebookSquare />
 					</span>
@@ -91,7 +101,7 @@ const PortfolioPage = (props: any) => {
 					</span>
 				</div>
 			</section>
-			<footer className='bg-teal-700 bg-opacity-60 text-teal-200 shadow-md text-center   px-5 py-5 mt-10 dark:bg-gray-900'>
+			<footer className='bg-opacity-60 dark:bg-gray-900 px-5 py-5 mt-10 text-center text-teal-200 bg-teal-700 shadow-md'>
 				Hi this site is made using nextJs
 			</footer>
 		</div>

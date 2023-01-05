@@ -1,6 +1,7 @@
 import Image from 'next/image';
 
 import { HiShoppingBag, HiArrowRight, HiStar } from 'react-icons/hi2';
+import { BsFacebook, BsTwitter, BsInstagram, BsLinkedin } from 'react-icons/bs';
 import BannerImage from 'public/assets/ultrahuman/bg-banner.jpg';
 import RingImage from 'public/assets/ultrahuman/bg-ring.jpg';
 import CardImage from 'public/assets/ultrahuman/card.jpg';
@@ -59,8 +60,8 @@ const UltraHumanPage = () => {
 				<div className='text-3xl font-extrabold text-white'>logo</div>
 				<ul className='text-opacity-90 flex gap-6 ml-auto text-sm font-bold text-gray-400'>
 					<li>Blog</li>
-					<li>Ultrahuman Ring</li>
-					<li>Ultrahuman M1</li>
+					<li>Maltahuman Ring</li>
+					<li>Maltahuman M1</li>
 					<li>Reviews</li>
 					<li>Partnerships</li>
 				</ul>
@@ -87,7 +88,7 @@ const UltraHumanPage = () => {
 					}}>
 					<div className='md:py-44 py-32'>
 						<header className='mb-10 text-white'>
-							<h1 className='py-3 text-5xl font-semibold'>Ultrahuman M1</h1>
+							<h1 className='py-3 text-5xl font-semibold'>Maltahuman M1</h1>
 							<p>Supercharge your nutrition and exercise performance using glucose biomarkers</p>
 						</header>
 						<div className='mb-3'>
@@ -117,7 +118,7 @@ const UltraHumanPage = () => {
 					}}>
 					<div className='md:py-44 py-32'>
 						<header className='mb-10 text-white'>
-							<h1 className='py-3 text-5xl font-semibold'>Ultrahuman Ring</h1>
+							<h1 className='py-3 text-5xl font-semibold'>Maltahuman Ring</h1>
 							<p>World's first metabolism tracking smart ring.</p>
 						</header>
 						<div className='mb-3'>
@@ -267,9 +268,108 @@ const UltraHumanPage = () => {
 						Get Started
 					</button>
 				</div>
+
+				<div className='h-96 bg-red-500'></div>
 			</section>
+
+			{/* Meet section */}
+			<section className='text-center'>
+				<header>
+					<h2 className='text-white py-5 text-5xl'>Meet our Medical and Sports Advisory Board</h2>
+				</header>
+				<p className='text-neutral-300 text-xl leading-none'>
+					Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus voluptatem nobis aliquid
+					sequi doloremque cupiditate nostrum odio enim autem praesentium.
+				</p>
+				<div className='my-10'>
+					<button className='px-10 py-3 text-2xl text-white border-2 border-white rounded-full'>
+						Learn about our clinical trials
+					</button>
+				</div>
+			</section>
+
+			{/* Notification */}
+			<p className='backdrop-blur-lg bg-opacity-50 bg-neutral-800 w-full py-4 font-semibold text-center text-white sticky bottom-0'>
+				Our clinical trials for M1 CGM metabolic health platform are in progress.{' '}
+				<span className='text-sky-400 pl-2'>Learn More &#8594;</span>
+			</p>
+			{/* Footer */}
+			<footer className='bg-neutral-900 px-20 pt-10'>
+				{/* notification */}
+
+				<div className='grid grid-cols-2  gap-20 pb-20'>
+					<div>
+						<ul className='text-neutral-300 grid gap-2 text-sm'>
+							<h4 className='text-white text-lg'>Company</h4>
+							<FooterLink>About us</FooterLink>
+							<FooterLink>Coaches</FooterLink>
+							<FooterLink>Reviews</FooterLink>
+							<FooterLink>Careers</FooterLink>
+							<FooterLink>Partnerships</FooterLink>
+							<FooterLink>Press</FooterLink>
+							<FooterLink>Support</FooterLink>
+							<FooterLink>Investor Relations</FooterLink>
+						</ul>
+					</div>
+					<div>
+						<ul className='text-neutral-300 grid gap-2 text-sm'>
+							<h4 className='text-white text-lg'>Social</h4>
+							<FooterLink>
+								<BsTwitter />
+								<span>Twitter</span>
+							</FooterLink>
+							<FooterLink>
+								<BsFacebook />
+								<span>Facebook</span>
+							</FooterLink>
+							<FooterLink>
+								<BsInstagram />
+								<span>Instagram</span>
+							</FooterLink>
+							<FooterLink>
+								<BsLinkedin />
+								<span>Linkedin</span>
+							</FooterLink>
+						</ul>
+					</div>
+				</div>
+				<div className='border-t-black border-t-2 py-5'>
+					<p className='text-white text-xs'>
+						Copyright 2020-2022 Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus, hic?
+					</p>
+					<p className='text-white text-xs pt-3'>
+						<ul className='flex gap-5'>
+							<li>
+								<a href='#'>Terms of Sale</a>
+							</li>
+							<li>
+								<a href='#'>Privacy Policy</a>
+							</li>
+							<li>
+								<a href='#'>Terms of Use</a>
+							</li>
+						</ul>
+					</p>
+				</div>
+			</footer>
 		</main>
 	);
 };
+
+const FooterLink = ({ children }: { children: ReactNode }) => (
+	<li className='flex select-none'>
+		<motion.a
+			initial={{
+				scale: 1,
+			}}
+			whileHover={{
+				scale: 1.15,
+				origin: 'left',
+			}}
+			className='flex items-center gap-2 cursor-pointer'>
+			{children}
+		</motion.a>
+	</li>
+);
 
 export default UltraHumanPage;

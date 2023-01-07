@@ -4,17 +4,9 @@ import RingImage from 'public/assets/ultrahuman/bg-ring.jpg';
 const Banner = () => {
 	return (
 		<div className='bg-neutral-800'>
-			{/* Notification Section */}
-			<section>
-				<p className='bg-neutral-800 w-full py-4 font-semibold text-center text-white'>
-					Our clinical trials for M1 CGM metabolic health platform are in progress.{' '}
-					<span className='text-sky-400 pl-2'>Learn More &#8594;</span>
-				</p>
-			</section>
-
 			{/* Banner */}
 			<section
-				className='relative mb-8 text-center bg-black bg-center bg-no-repeat bg-cover'
+				className='relative mb-8 text-center bg-black bg-center bg-no-repeat bg-cover px-10'
 				style={{
 					backgroundImage: `url(${BannerImage.src})`,
 				}}>
@@ -30,7 +22,7 @@ const Banner = () => {
 						<a href='#'>Talk to a specialist &#8594;</a>
 					</div>
 				</div>
-				<div className='backdrop-blur-2xl text-opacity-80 bg-opacity-20 absolute bottom-0 w-full py-3 text-center text-white bg-black'>
+				<div className='left-0 backdrop-blur-2xl text-opacity-80 bg-opacity-20 absolute bottom-0 w-full py-3 text-center text-white bg-black'>
 					<p className=''>
 						Find your ideal fitness and nutrition plan.{' '}
 						<a
@@ -44,7 +36,7 @@ const Banner = () => {
 
 			{/* Section 2 */}
 			<section
-				className='relative text-center bg-black bg-center bg-no-repeat bg-cover'
+				className='relative text-center bg-black bg-center bg-no-repeat bg-cover px-10'
 				style={{
 					backgroundImage: `url(${RingImage.src})`,
 				}}>

@@ -1,9 +1,10 @@
 import { HiShoppingBag, HiStar } from 'react-icons/hi2';
+import BaseSection from 'src/components/ultrahuman/BaseSection';
 
 const InsightsSection = () => {
 	return (
 		<div className=''>
-			<section className='px-10'>
+			<section className='py-10 px-20'>
 				<header>
 					<h2 className='py-10 text-5xl text-center text-white'>Deep Insights. Deeply trusted.</h2>
 				</header>
@@ -13,15 +14,14 @@ const InsightsSection = () => {
 					saepe harum, atque ea, delectus sed labore? Aut debitis amet ex repudiandae maxime, dolores totam.
 					Quod inventore sit error doloribus molestias nam porro temporibus eum magni?
 				</p>
-
-				<div className='grid grid-cols-2'>
+				<div className='grid grid-cols-1 md:grid-cols-2 gap-5'>
 					{/* Appstore */}
 					<div className='justify-items-center grid grid-rows-2 gap-3'>
 						<div className='flex items-center gap-2 text-white'>
-							<p className='text-7xl'>4.9</p>
+							<p className='text-5xl md:text-7xl'>4.9</p>
 							<div>
 								<p className='text-2xl'>App Store</p>
-								<p className='text-amber-500 flex text-3xl'>
+								<p className='text-amber-500 flex text-xl md:text-3xl'>
 									{Array(5)
 										.fill(0)
 										.map((i, idx) => (
@@ -30,20 +30,22 @@ const InsightsSection = () => {
 								</p>
 							</div>
 						</div>
-						<button className='text-neutral-400 flex items-center px-6 py-3 text-2xl border-2 border-white rounded-full'>
-							<HiShoppingBag />
+						<button className='text-neutral-400 flex items-center px-3 md:px-6 py-1 md:py-3 text-base md:text-xl border-2 border-white rounded-full'>
+							<span className='text-3xl'>
+								<HiShoppingBag />
+							</span>
 
-							<span className='pl-3'>Download on AppStore</span>
+							<span className='pl-2 md:pl-3'>Download on AppStore</span>
 						</button>
 					</div>
 
 					{/* Playstore */}
 					<div className='justify-items-center grid grid-rows-2 gap-3'>
 						<div className='flex items-center gap-2 text-white'>
-							<p className='text-7xl'>4.9</p>
+							<p className='text-5xl md:text-7xl'>4.9</p>
 							<div>
-								<p className='text-2xl'>App Store</p>
-								<p className='text-amber-500 flex text-3xl'>
+								<p className='text-2xl'>Play Store</p>
+								<p className='text-amber-500 flex text-xl md:text-3xl'>
 									{Array(5)
 										.fill(0)
 										.map((i, idx) => (
@@ -52,10 +54,12 @@ const InsightsSection = () => {
 								</p>
 							</div>
 						</div>
-						<button className='text-neutral-400 flex items-center px-6 py-3 text-2xl border-2 border-white rounded-full'>
-							<HiShoppingBag />
+						<button className='text-neutral-400 flex items-center px-3 md:px-6 py-1 md:py-3 text-base md:text-xl border-2 border-white rounded-full'>
+							<span className='text-3xl'>
+								<HiShoppingBag />
+							</span>
 
-							<span className='pl-3'>Download on Playstore</span>
+							<span className='pl-2 md:pl-3'>Download on Playstore</span>
 						</button>
 					</div>
 				</div>

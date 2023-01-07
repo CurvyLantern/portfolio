@@ -69,11 +69,7 @@ const ParallaxSlider = ({ baseVelocity, children, start, end }: ParallaxSliderPr
 		damping: 15,
 		restSpeed: 1,
 	});
-	const transform = useMotionTemplate`translateX(${xSmoothProgress}%)`;
-
-	useMotionValueEvent(xSmoothProgress, 'change', cur => {
-		console.log(cur);
-	});
+	const transform = useMotionTemplate`translateX(${xProgress}%)`;
 
 	return (
 		<motion.div className='' ref={container} style={{ transform }}>

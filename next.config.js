@@ -1,6 +1,8 @@
+const withVideos = require('next-videos');
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-	reactStrictMode: true,
+	reactStrictMode: false,
 	webpack(config) {
 		config.module.rules.push({
 			test: /\.svg$/,
@@ -11,4 +13,4 @@ const nextConfig = {
 	},
 };
 
-module.exports = nextConfig
+module.exports = withVideos(nextConfig);

@@ -27,6 +27,7 @@ const ChampionsSection = () => {
 			</div>
 			<Swiper
 				modules={[EffectCoverflow]}
+				centeredSlides
 				spaceBetween={25}
 				slidesPerView={'auto'}
 				effect='coverflow'
@@ -36,6 +37,7 @@ const ChampionsSection = () => {
 					640: {
 						slidesPerView: 2.5,
 						effect: 'slide',
+						modules: [],
 					},
 				}}>
 				{Array(10)

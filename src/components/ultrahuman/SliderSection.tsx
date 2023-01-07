@@ -16,8 +16,15 @@ const SliderSection = () => {
 					pagination={{
 						el: `.${styles.myCustomPagination}`,
 						clickable: true,
+					}}
+					spaceBetween={10}
+					breakpoints={{
+						800: {
+							slidesPerView: 3,
+							slidesPerGroup: 3,
+						},
 					}}>
-					{Array(5)
+					{Array(9)
 						.fill(0)
 						.map((i, idx) => {
 							return (

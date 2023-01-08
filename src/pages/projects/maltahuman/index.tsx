@@ -30,7 +30,7 @@ const MaltaHumanPage = () => {
 		}
 	});
 	return (
-		<main className='bg-black '>
+		<main className=' bg-black'>
 			<Header />
 
 			{/* Notification */}

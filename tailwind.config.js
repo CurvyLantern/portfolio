@@ -3,6 +3,9 @@ module.exports = {
 	darkMode: 'class',
 	content: ['node_modules/flowbite-react/**/*.{js,jsx,ts,tsx}', './src/**/*.{js,ts,jsx,tsx}'],
 	theme: {
+		container: {
+			center: true,
+		},
 		extend: {
 			boxShadow: {
 				round: '0 4px .6rem rgba(0,0,0,.2)',

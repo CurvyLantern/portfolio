@@ -3,8 +3,6 @@ import { Variants, motion } from 'framer-motion';
 import { useState } from 'react';
 import { IconType } from 'react-icons/lib';
 
-import { usePopper } from 'react-popper';
-
 type SkillCardProps = {
 	title: string;
 	icon: IconType | ((props: TablerIconsProps) => JSX.Element);
@@ -118,10 +116,7 @@ export const SkillCard = ({ ...skill }: SkillCardProps) => {
 					y: isHovered ? -100 : -50,
 					opacity: isHovered ? 1 : 0,
 				}}
-				style={{
-					color: skill.color,
-				}}
-				className='bg-neutral-700 absolute w-full px-5 py-2 text-center rounded-lg'>
+				className='text-white bg-neutral-700 absolute w-full px-5 py-2 text-center rounded-lg'>
 				<h5 className='text-sm'>{skill.title}</h5>
 				<p>{skill.level}%</p>
 			</motion.div>

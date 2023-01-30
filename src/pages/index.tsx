@@ -45,27 +45,25 @@ interface PortfolioPageProps {
 	}[];
 }
 const PortfolioPage = ({ myProjects }: PortfolioPageProps) => {
-	const [boingAudioEl, state, controls, ref] = useAudio({
-		src: 'myaudio2.mp3',
-	});
-	useEffectOnce(() => {
-		controls.volume(0.15);
-	});
-
-	const extraFn = useCallback(
-		debounce(
-			() => {
-				controls.pause();
-				controls.seek(0);
-				controls.play();
-			},
-			100,
-			{
-				leading: true,
-			}
-		),
-		[]
-	);
+	// const extraFn = useCallback(
+	// 	// debounce(
+	// 	// 	() => {
+	// 	// 		controls.pause();
+	// 	// 		controls.seek(0);
+	// 	// 		controls.play();
+	// 	// 	},
+	// 	// 	100,
+	// 	// 	{
+	// 	// 		leading: false,
+	// 	// 	}
+	// 	// ),
+	// 	() => {
+	// 		controls.pause();
+	// 		controls.seek(0);
+	// 		controls.play();
+	// 	},
+	// 	[controls]
+	// );
 
 	const scrollDownVariant: Variants = {
 		initial: {
@@ -99,7 +97,6 @@ const PortfolioPage = ({ myProjects }: PortfolioPageProps) => {
 					{/* whole page overlay */}
 					<div className='-z-30 backdrop-blur-sm bg-opacity-80 fixed top-0 left-0 w-full h-full bg-black'></div>
 
-					{boingAudioEl}
 					<nav className=' flex items-center justify-between px-20 py-10'>
 						<div className='text-neutral-600 text-3xl font-bold'>
 							<Link href='/'>AN</Link>
@@ -119,7 +116,7 @@ const PortfolioPage = ({ myProjects }: PortfolioPageProps) => {
 								<Parallax speed={10}>
 									<>
 										<h1 className='text-7xl font-bold text-center'>
-											<AnimateLetter sentence='Hi there!!' extraFn={extraFn} />
+											<AnimateLetter sentence='Hi there!!' extraFn={() => {}} />
 										</h1>
 										<p className='text-center'>
 											I am <span className='text-cyan-500 text-[125%]'>Ashfaq Nasim</span>

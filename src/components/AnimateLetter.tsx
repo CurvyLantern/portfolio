@@ -3,7 +3,7 @@ import { useState, useRef, useMemo, useEffect } from 'react';
 import { random, sample } from 'lodash-es';
 import clsx from 'clsx';
 import colors from 'nice-color-palettes';
-import { useUpdateEffect } from 'react-use';
+import { useAudio, useUpdateEffect } from 'react-use';
 import { useEffectOnce } from 'usehooks-ts';
 const color = colors[76];
 
@@ -95,10 +95,15 @@ interface LetterProps {
 	letter: string;
 	type?: string;
 	setActionElIndex: (i: number) => void;
+	onHover?: () => void;
 }
 const Letter = ({ letter, type = 'rubberBand', setActionElIndex, actionElIndex, elIndex }: LetterProps) => {
 	const count = useRef(0);
 	const [isHovered, setIsHovered] = useState(false);
+
+	const [boingAudioEl, state, controls, ref] = useAudio({
+		src: 'myaudio2.mp3',
+	});
 
 	const handleClick = () => {
 		// count.current = random(40, 60);
@@ -110,6 +115,23 @@ const Letter = ({ letter, type = 'rubberBand', setActionElIndex, actionElIndex, 
 		}
 	};
 
+	const handleHover = () => {
+		if (!isHovered) {
+			controls.pause();
+			controls.seek(0);
+			controls.play();
+		}
+
+		setIsHovered(true);
+	};
+	const onAnimationEnd = () => {
+		setIsHovered(false);
+	};
+
+	useEffectOnce(() => {
+		controls.volume(0.1);
+	});
+
 	return (
 		<span className='inline-flex items-center justify-center'>
 			<span
@@ -118,10 +140,11 @@ const Letter = ({ letter, type = 'rubberBand', setActionElIndex, actionElIndex, 
 					[`animate__${type}`]: isHovered,
 				})}
 				onClick={handleClick}
-				onPointerOver={() => setIsHovered(true)}
-				onAnimationEnd={() => setIsHovered(false)}>
+				onPointerOver={handleHover}
+				onAnimationEnd={onAnimationEnd}>
 				{letter}
 			</span>
+			{boingAudioEl}
 			{/* {actionElIndex === elIndex ? <Particles count={count.current} content={letter} /> : null} */}
 		</span>
 	);

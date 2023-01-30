@@ -21,12 +21,13 @@
     "incremental": true
   },
   "include": [
-    "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx",
-    "src/types/global.d.ts",
-    "node_modules/next-videos/index.d.ts"
-  ]
+		"next-env.d.ts",
+		"**/*.ts",
+		"**/*.tsx",
+		"src/types/global.d.ts",
+		"node_modules/next-videos/index.d.ts",
+		"src/components/PdfLoader.jsx"
+	]
   // "exclude": ["node_modules"]
   ,
   "exclude": [

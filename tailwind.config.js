@@ -1,7 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
 	darkMode: 'class',
-	content: ['node_modules/flowbite-react/**/*.{js,jsx,ts,tsx}', './src/**/*.{js,ts,jsx,tsx}'],
+	content: ['./src/**/*.{js,ts,jsx,tsx}'],
 	theme: {
 		container: {
 			center: true,
@@ -23,7 +23,6 @@ module.exports = {
 	plugins: [
 		require('@tailwindcss/typography'),
 		require('@tailwindcss/aspect-ratio'),
-		require('flowbite/plugin'),
 		// ...
 	],
 };

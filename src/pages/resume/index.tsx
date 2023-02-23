@@ -1,70 +1,68 @@
-import { GetServerSideProps } from 'next';
+import { Variants, motion, useAnimation } from 'framer-motion';
 import dynamic from 'next/dynamic';
-import { useRef, useState } from 'react';
-import { useEffectOnce } from 'usehooks-ts';
+import Link from 'next/link';
+import { useState } from 'react';
+import { useEffectOnce } from 'react-use';
+import { MyPdfFetcher } from 'src/utils/FetcherHelpers';
 
 const ViewPdf = dynamic(
 	() => {
-		return import('../../components/PdfLoader.jsx');
+		return import('../../components/PdfLoader');
 	},
 	{
 		ssr: false,
 	}
 );
 
-async function createFile(path: string, name: string): Promise<File> {
-	let response = await fetch(path);
-	console.log(response);
-	let data = await response.blob();
-	return new File([data], name, {
-		type: data.type,
-	});
-}
+interface ResumePageProps {}
+const ResumePage: React.FC<ResumePageProps> = () => {
+	// const [pdfData, setPdfData] = useState<any>(null);
 
-interface ResumePageProps {
-	fileData: Blob;
-}
-const ResumePage = ({ fileData }: ResumePageProps) => {
-	const [basicFile, setBasicFile] = useState<any>(null);
-	const inputRef = useRef<HTMLInputElement>(null);
-
-	useEffectOnce(() => {
-		const init = async () => {
-			// const file = await createFile('/api/get_local_pdf', 'temp.pdf');
-			// console.log(file, 'from effect');
-		};
-		init();
-	});
+	// useEffectOnce(() => {
+	// 	const init = async () => {
+	// 		let resume = await MyPdfFetcher();
+	// 		setPdfData(resume);
+	// 	};
+	// 	init();
+	// });
 
 	return (
-		<div className='w-screen h-screen'>
-			<input
-				ref={inputRef}
-				type='file'
-				onChange={evt => {
-					console.log(evt.target.files);
-					if (evt.target.files && evt.target.files.length > 0) {
-						setBasicFile(evt.target.files[0]);
-					}
-				}}
-			/>
-			<ViewPdf file={'/my-resume.pdf'}></ViewPdf>
+		<>
+			{/* <div className='min-h-screen'> */}
+			<div className='w-full md:w-2/3 lg:w-1/2 mx-auto'>
+				<img src='/resume.png' alt='my resume' />
+				{/* <ViewPdf file={pdfData}></ViewPdf> */}
+			</div>
+			<BlinkingDownloadBtn />
+			{/* </div> */}
+		</>
+	);
+};
+const BlinkingDownloadBtn = () => {
+	const variant: Variants = {
+		init: {
+			scale: 1,
+		},
+		animate: {
+			scale: 1.05,
+			transition: {
+				repeat: Infinity,
+				repeatType: 'mirror',
+			},
+		},
+	};
+	return (
+		<div className='flex items-center justify-center py-5'>
+			{/* <motion.div variants={variant} initial='init' animate='animate' whileHover='init'> */}
+			<Link
+				href='/resume.pdf'
+				download='ashfaq_naseem_resume.pdf'
+				className='inline-block bg-green-500 px-4 py-3 hover:scale-105 active:scale-95 transition-transform rounded-md'>
+				Download
+			</Link>
+			{/* </motion.div> */}
 		</div>
 	);
 };
-export const getServerSideProps: GetServerSideProps = async ctx => {
-	const testRes = await fetch('http://localhost:3000/my-resume.pdf');
-	const testBlob = await testRes.blob();
-	console.log(testBlob);
-	// const file = new File([testBlob], 'my-resume.pdf', {
-	// 	type: testBlob.type,
-	// });
-	// console.log(file);
 
-	return {
-		props: {
-			fileData: null,
-		},
-	};
-};
 export default ResumePage;

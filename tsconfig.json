@@ -26,7 +26,7 @@
 		"**/*.tsx",
 		"src/types/global.d.ts",
 		"node_modules/next-videos/index.d.ts",
-		"src/components/PdfLoader.jsx"
+		"src/components/PdfLoader.tsx"
 	]
   // "exclude": ["node_modules"]
   ,

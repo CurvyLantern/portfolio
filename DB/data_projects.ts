@@ -10,7 +10,7 @@ export const ProjectsData: schemaType[] = [
 		short_desc:
 			'A fun project that I have worked on, It has silly background story about why I made this one.',
 		img: '/muvitime.png',
-		web_url: 'https://client-five-wine.vercel.app/',
+		web_url: 'https://muvitime.vercel.app/',
 	},
 	{
 		title: "It's time to have some fun",

@@ -58,7 +58,7 @@ export const ProjectCard = ({
 					</Link>
 				</p>
 
-				<Link href={web_url} rel='' target='_blank' className='text-blue-400'>
+				<Link href={web_url} rel='noopener noreferrer' target='_blank' className='text-blue-400'>
 					open project in new tab
 				</Link>
 			</div>
